@@ -15,9 +15,11 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t devopsheroes22/travis-test2:v2 .
-  - docker login -u "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
-  - docker push devopsheroes22/travis-test2:v2
+  - docker build -t peterfarouk/travis-test:v2 .
+  - docker login -u "$MY_DOCKER_USERNAME" --password "$MY_DOCKER_PASSWORD"
+  - docker push peterfarouk/travis-test:v2
+  
+  
 
 after_success:
  - echo "done"
